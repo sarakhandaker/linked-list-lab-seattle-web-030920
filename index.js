@@ -25,22 +25,34 @@ function nodeAt(index, linkedlist, collection) {
     return node
 }
 
-function addressAt (){
-
+function addressAt(index, linkedList, collection) {
+    if (index == 0) {
+        return linkedList
+    } else {
+        let node = nodeAt(index - 1, linkedList, collection)
+        return node.next
+    }
 }
 
-function indexAt (){
-    
+function indexAt(node, collection, linkedList) {
+    let currentNode = headNode(linkedList, collection)
+    let i = 0
+    while (currentNode != node) {
+        i++
+        currentNode = next(currentNode, collection)
+    }
+    return i
 }
 
-function insertNodeAt (){
-    
+function insertNodeAt(index, newNodeAddress, linkedlist, collection) {
+    let previous= nodeAt(index-1, linkedlist, collection)
+    let newNode = collection[newNodeAddress]
+    newNode.next = previous.next
+    previous.next=newNodeAddress
 }
 
-function addressAt (){
-    
-}
-
-function deleteNodeAt (){
-    
+function deleteNodeAt(index, linkedList, collection) {
+    let previous= nodeAt(index-1, linkedList, collection)
+    let deleted= nodeAt(index, linkedList, collection)
+    previous.next=deleted.next
 }
