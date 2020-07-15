@@ -7,20 +7,40 @@ function getName(node) {
     return node["name"]
 }
 
-function headNode(linkedList, collection){
+function headNode(linkedList, collection) {
     return collection[linkedList]
-  }
+}
 
 function next(node, collection) {
     let address = node["next"]
     return collection[address]
 }
 
-function nodeAt(index, linkedlist, collection){
-let node= headNode(linkedlist, collection)
-    for(let i=0; i<index; i++){
-        let address= node.next
-        node=collection[address]
+function nodeAt(index, linkedlist, collection) {
+    let node = headNode(linkedlist, collection)
+    for (let i = 0; i < index; i++) {
+        let address = node.next
+        node = collection[address]
     }
-return node
+    return node
+}
+
+function addressAt (){
+
+}
+
+function indexAt (){
+    
+}
+
+function insertNodeAt (){
+    
+}
+
+function addressAt (){
+    
+}
+
+function deleteNodeAt (){
+    
 }
